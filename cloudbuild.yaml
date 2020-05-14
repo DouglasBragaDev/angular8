@@ -1,9 +1,9 @@
 steps:
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/$PROJECT_ID/angular8-277117", "."]
+    args: ["build", "-t", "gcr.io/$PROJECT_ID/angular8", "."]
   # push the container image to Container Registry
   - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/$PROJECT_ID/angular8-277117"]
+    args: ["push", "gcr.io/$PROJECT_ID/angular8"]
   # Deploy container image to Cloud Run
   - name: "gcr.io/cloud-builders/gcloud"
     args:
@@ -14,7 +14,7 @@ steps:
     "--allow-unauthenticated",
     "$PROJECT_ID",
     "--image",
-    "gcr.io/$PROJECT_ID/angular8-277117",
+    "gcr.io/$PROJECT_ID/angular8",
     "--region",
     "us-central1",
     "--platform",
@@ -23,4 +23,4 @@ steps:
     "128Mi"
     ]
     images:
-    - gcr.io/$PROJECT_ID/angular8-277117
+    - gcr.io/$PROJECT_ID/angular8
