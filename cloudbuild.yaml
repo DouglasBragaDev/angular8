@@ -22,5 +22,5 @@ steps:
     "--memory",
     "128Mi"
     ]
-    images:
-    - "gcr.io/$PROJECT_ID/angular8-application"
+images:
+  - "gcr.io/$PROJECT_ID/angular8-application"
